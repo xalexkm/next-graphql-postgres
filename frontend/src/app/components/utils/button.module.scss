@@ -1,0 +1,19 @@
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--button-height);
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  color: var(--white-color);
+  font-size: var(--font);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--black-color);
+    background-color: var(--secondary-color);
+  }
+}
