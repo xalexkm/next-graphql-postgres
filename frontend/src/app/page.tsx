@@ -1,25 +1,28 @@
-import Image from "next/image";
+"use client";
 import styles from "./page.module.scss";
-import {Button} from "@/app/components/utils/button";
-// import anime from "animejs/lib/anime.es";
+import {
+  Button,
+  ButtonImperativeHandle,
+} from "@/src/app/components/utils/button";
+import { RefObject, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+
+const routeToDashboard = (router: AppRouterInstance) => {
+  router.push("/dashboard");
+};
 
 export default function Home() {
-    // anime({
-    //     targets: ,
-    //     translateX: 250,
-    //     rotate: '1turn',
-    //     backgroundColor: '#FFF',
-    //     duration: 800
-    // });
-    return (
-        <main className={styles.main}>
-            <div className={styles.title}>
-                <div>
-                    <h1>DAYBREAK</h1>
-                    <h3>Something, something, planner!</h3>
-                </div>
-                <Button>Try it out</Button>
-            </div>
-        </main>
-    );
+  const router = useRouter();
+  return (
+    <main className={styles.main}>
+      <div className={styles.title}>
+        <div>
+          <h1>DAYBREAK</h1>
+          <h3>Something, something, planner!</h3>
+        </div>
+        <Button onClick={() => routeToDashboard(router)}>Try it out</Button>
+      </div>
+    </main>
+  );
 }
