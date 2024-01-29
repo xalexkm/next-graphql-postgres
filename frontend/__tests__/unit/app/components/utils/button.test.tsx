@@ -1,6 +1,6 @@
 import { Button } from "../../../../../src/app/components/utils/button";
-import { render, fireEvent, screen } from "@testing-library/react";
-import React, { RefObject } from "react";
+import { render, screen } from "@testing-library/react";
+import React from "react";
 
 import "@testing-library/jest-dom";
 import { userEvent } from "@testing-library/user-event";
