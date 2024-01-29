@@ -1,0 +1,17 @@
+.header__wrapper {
+  background-color: #501537;
+  height: var(--header-height);
+}
+
+.header__block {
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  padding: var(--spacing);
+
+  .header__title {
+    font-size: var(--title-font);
+    color: var(--white-color);
+  }
+}
