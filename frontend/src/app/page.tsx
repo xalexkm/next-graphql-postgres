@@ -1,10 +1,6 @@
 "use client";
 import styles from "./page.module.scss";
-import {
-  Button,
-  ButtonImperativeHandle,
-} from "@/src/app/components/utils/button";
-import { RefObject, useRef } from "react";
+import { Button } from "@/src/app/components/utils/button";
 import { useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
