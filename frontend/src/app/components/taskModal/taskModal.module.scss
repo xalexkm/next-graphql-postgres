@@ -1,0 +1,50 @@
+
+.task__modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: var(--large-spacing);
+  justify-content: space-between;
+  padding: var(--spacing);
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 500px;
+  width: 500px;
+  background-color: var(--primary-color);
+
+  .task__modal__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
+
+  .task__modal__preference__block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large-spacing);
+
+    .task__modal__input {
+      font-size: var(--large-font-size);
+      color: var(--black-color);
+      height: var(--input-height);
+      width: 100%;
+      padding: var(--spacing);
+      background-color: var(--white-color);
+      border: none;
+    }
+
+    .task__model__parameter {
+      width: 100%;
+      display: flex;
+      color: var(--white-color);
+      gap: var(--spacing);
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .task__model__button {
+    align-self: flex-end;
+  }
+}

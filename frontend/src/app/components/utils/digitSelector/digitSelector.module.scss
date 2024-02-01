@@ -1,0 +1,17 @@
+
+.digit__selector {
+  display: flex;
+  gap: var(--spacing);
+  align-items: center;
+  color: var(--white-color);
+
+  .digit__selector__sub, .digit__selector__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black-color);
+    height: 50px;
+    width: 50px;
+    background-color: var(--secondary-color);
+  }
+}
