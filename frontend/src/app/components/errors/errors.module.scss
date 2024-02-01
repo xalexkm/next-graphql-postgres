@@ -1,0 +1,16 @@
+.errors {
+  position: fixed;
+  left: var(--large-spacing);
+  bottom: var(--large-spacing);
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--spacing);
+
+  .errors__box {
+    width: 300px;
+    max-height: 300px;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    padding: var(--spacing);
+  }
+}
