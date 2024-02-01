@@ -1,8 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineSlices, configureStore } from "@reduxjs/toolkit";
+import tasksSlice from "@/src/redux/slices/tasks/tasksSlice";
+import { errorsReducer } from "@/src/redux/reducers/errorsReducer";
+
+export const rootReducer = combineSlices(tasksSlice, { errors: errorsReducer });
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: rootReducer,
   });
 };
 
