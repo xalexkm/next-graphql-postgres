@@ -16,7 +16,7 @@ export const mutationSchema = `
     
     type Mutation {
       createTask(input: InputTask): Task
-      deleteTask(taskId: String): String
+      deleteTask(userId: String, taskId: String): String
       updateTask(input: UpdateTask): Task
     }
     `;

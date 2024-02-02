@@ -3,4 +3,5 @@ export const querySchema = `
         users: [User]
         tasks: [Task]
         getAllTasksByUserId(userId: String): [Task]
+        getUserByEmail(email: String): [User]
     }`;

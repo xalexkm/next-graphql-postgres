@@ -1,8 +1,8 @@
 export const userSchema = `
     type User {
-        id: Int
-        firstname: String
-        lastname: String
+        user_id: String
+        username: String
         email: String
-        date_joined: String
+        password_hash: String
+        password_salt: String
     }`;
