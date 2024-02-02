@@ -1,5 +1,5 @@
 import className from "./taskModal.module.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DigitSelector } from "@/src/app/components/utils/digitSelector/digitSelector";
 import { Button } from "@/src/app/components/utils/button";
 import {
@@ -25,6 +25,8 @@ export const TaskModal = ({ setIsOpen }: TaskModal) => {
     (state) => state.tasks.selectedTask,
   );
 
+  const outside = useRef<boolean | null>(true);
+
   const [inputValue, setInputValue] = useState("");
   const dispatch = useAppDispatch();
   const [difficulty, setDifficulty] = useState(
@@ -35,7 +37,21 @@ export const TaskModal = ({ setIsOpen }: TaskModal) => {
   const closeModal = () => {
     dispatch(deselectTask());
     setIsOpen(false);
+    outside.current = null;
   };
+
+  useEffect(() => {
+    function callback() {
+      if (outside.current) {
+        closeModal();
+      }
+    }
+
+    document.addEventListener("click", callback);
+    return () => {
+      removeEventListener("click", callback);
+    };
+  }, []);
 
   useEffect(() => {
     if (selectedTask) {
@@ -74,7 +90,13 @@ export const TaskModal = ({ setIsOpen }: TaskModal) => {
   };
 
   return (
-    <div className={className.task__modal}>
+    <div
+      onMouseEnter={() => (outside.current = false)}
+      onMouseOver={() => (outside.current = false)}
+      onMouseLeave={() => (outside.current = true)}
+      onMouseOut={() => (outside.current = true)}
+      className={className.task__modal}
+    >
       <div className={className.task__modal__preference__block}>
         <input
           className={className.task__modal__input}

@@ -26,13 +26,9 @@ export default function DashboardLayout({
 }) {
   return (
     <StoreProvider>
-      <html lang="en">
-        <body className={`${nixie.variable} ${nunito.className}`}>
-          <Header />
-          {children}
-          <ErrorsBlock />
-        </body>
-      </html>
+      <Header />
+      {children}
+      <ErrorsBlock />
     </StoreProvider>
   );
 }
