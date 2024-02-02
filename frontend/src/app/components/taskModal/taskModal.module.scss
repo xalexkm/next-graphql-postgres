@@ -1,17 +1,20 @@
 
 .task__modal {
   position: fixed;
+  z-index: var(--overlay-z-index);
   display: flex;
   flex-direction: column;
   gap: var(--large-spacing);
   justify-content: space-between;
   padding: var(--spacing);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary-color);
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
   height: 500px;
   width: 500px;
-  background-color: var(--primary-color);
+  background-color: var(--white-color);
 
   .task__modal__buttons {
     display: flex;
@@ -25,19 +28,22 @@
     gap: var(--large-spacing);
 
     .task__modal__input {
+      font-weight: 300;
       font-size: var(--large-font-size);
       color: var(--black-color);
       height: var(--input-height);
       width: 100%;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--primary-color);
       padding: var(--spacing);
       background-color: var(--white-color);
-      border: none;
     }
 
     .task__model__parameter {
       width: 100%;
       display: flex;
-      color: var(--white-color);
+      font-size: var(--medium-font-size);
+      color: var(--black-color);
       gap: var(--spacing);
       justify-content: space-between;
       align-items: center;

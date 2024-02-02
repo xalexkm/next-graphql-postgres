@@ -6,9 +6,11 @@
   height: var(--button-height);
   width: 100%;
   cursor: pointer;
+  font-weight: bold;
   background-color: transparent;
-  border: 2px solid var(--secondary-color);
-  color: var(--white-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  color: var(--primary-color);
   font-size: var(--font);
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 

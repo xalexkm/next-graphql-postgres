@@ -40,7 +40,7 @@ export default function Dashboard() {
 
   return (
     <Wrapper>
-      <main>
+      <main style={{ marginTop: "25px" }}>
         <Tasks />
       </main>
     </Wrapper>

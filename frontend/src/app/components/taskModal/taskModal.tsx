@@ -15,6 +15,7 @@ import {
 } from "@/src/redux/slices/tasks/tasksThunks";
 import { useAppDispatch, useAppSelector } from "@/src/redux/hooks";
 import { Task } from "@/src/redux/slices/tasks/tasksActions";
+import anime from "animejs/lib/anime.es";
 
 type TaskModal = {
   setIsOpen: (a: boolean) => void;
@@ -39,6 +40,17 @@ export const TaskModal = ({ setIsOpen }: TaskModal) => {
     setIsOpen(false);
     outside.current = null;
   };
+  const taskRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    anime({
+      targets: taskRef.current,
+      translateY: [50, 0],
+      opacity: [0, 1],
+      duration: 500,
+      easing: "easeInExpo",
+    });
+  }, []);
 
   useEffect(() => {
     function callback() {

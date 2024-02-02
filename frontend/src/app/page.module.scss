@@ -18,6 +18,30 @@
   }
 }
 
+.input {
+  font-size: var(--medium-font-size);
+  color: var(--white-color);
+  height: var(--input-height);
+  width: 100%;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--secondary-color);
+  padding: var(--spacing);
+  outline: none;
+  background-color: var(--primary-color);
+
+  &:active {
+    outline: none;
+  }
+}
+
+.button {
+  background-color: var(--secondary-color);
+
+  &:hover {
+    background-color: var(--grey-color);
+  }
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
 }

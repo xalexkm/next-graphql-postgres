@@ -136,11 +136,10 @@ const deleteTaskAndSync = createAsyncThunk(
       },
       body: JSON.stringify({ task_id: taskId }),
     }).then((res) => res.json());
-
-    if (data.user_id) {
+    if (data) {
       return data;
     } else {
-      return thunkAPI.rejectWithValue(data);
+      return thunkAPI.rejectWithValue(taskId);
     }
   },
 );

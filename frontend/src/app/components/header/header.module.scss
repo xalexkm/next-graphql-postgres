@@ -1,6 +1,6 @@
 .header__wrapper {
-  background-color: #501537;
   height: var(--header-height);
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .header__block {
@@ -8,10 +8,11 @@
   height: var(--header-height);
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: var(--spacing);
 
   .header__title {
-    font-size: var(--title-font);
-    color: var(--white-color);
+    font-size: var(--extra-large-font);
+    color: var(--black-color);
   }
 }

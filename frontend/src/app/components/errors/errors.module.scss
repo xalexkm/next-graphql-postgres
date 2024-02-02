@@ -11,6 +11,8 @@
     max-height: 300px;
     background-color: var(--white-color);
     color: var(--black-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-color);
     padding: var(--spacing);
   }
 }

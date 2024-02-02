@@ -46,16 +46,23 @@ export default function Home() {
           <h3>Something, something, planner!</h3>
         </div>
         <input
+          className={styles.input}
           type={"email"}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          className={styles.input}
           type={"password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button onClick={() => routeToDashboard()}>Login</Button>
+        <Button
+          extraClassName={styles.button}
+          onClick={() => routeToDashboard()}
+        >
+          Login
+        </Button>
       </div>
     </main>
   );

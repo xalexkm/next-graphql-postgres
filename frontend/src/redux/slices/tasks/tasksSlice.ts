@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Task } from "@/src/redux/slices/tasks/tasksActions";
-import { fetchAllTasksByUserId } from "@/src/redux/slices/tasks/tasksThunks";
+import {
+  createTaskAndSync,
+  fetchAllTasksByUserId,
+} from "@/src/redux/slices/tasks/tasksThunks";
 
 export interface TasksState {
   allTasks: Task[];
@@ -58,12 +61,13 @@ const tasksSlice = createSlice({
     selectAllTasks: (state) => state.allTasks,
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchAllTasksByUserId.fulfilled, (state, action) => {
-      state.allTasks = action.payload;
-    });
-    builder.addCase(fetchAllTasksByUserId.pending, (state) => {
-      state.initialFetch = false;
-    });
+    builder
+      .addCase(fetchAllTasksByUserId.fulfilled, (state, action) => {
+        state.allTasks = action.payload;
+      })
+      .addCase(fetchAllTasksByUserId.pending, (state) => {
+        state.initialFetch = false;
+      });
   },
 });
 

@@ -3,15 +3,17 @@
   display: flex;
   gap: var(--spacing);
   align-items: center;
-  color: var(--white-color);
+  color: var(--black-color);
 
   .digit__selector__sub, .digit__selector__add {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--black-color);
+    font-size: var(--large-font-size);
+    cursor: pointer;
     height: 50px;
     width: 50px;
-    background-color: var(--secondary-color);
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
   }
 }

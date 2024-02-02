@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #501537;
-  --secondary-color: #d4e79e;
+  --primary-color: #313638;
+  --secondary-color: #E6E8E6;
   --white-color: #ffffff;
   --grey-color: #808080;
   --black-color: #000000;
@@ -16,4 +16,7 @@
   --header-height: 4rem;
   --item-height: 4rem;
   --input-height: 3rem;
+  --border-radius: 0.5rem;
+  --overlay-z-index: 9999;
+  --min-task-height: 8rem;
 }
