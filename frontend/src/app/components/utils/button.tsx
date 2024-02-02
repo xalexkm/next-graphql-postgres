@@ -1,16 +1,9 @@
 "use client";
 import className from "./button.module.scss";
-import {
-  ForwardedRef,
-  forwardRef,
-  LegacyRef,
-  Ref,
-  RefObject,
-  useImperativeHandle,
-  useRef,
-} from "react";
+import { ForwardedRef, forwardRef, useImperativeHandle, useRef } from "react";
 
 type ButtonProps = {
+  extraClassName?: string;
   onClick?: () => any;
   children?: string;
 };
@@ -21,7 +14,11 @@ export type ButtonImperativeHandle = {
 
 export const Button = forwardRef(
   (
-    { onClick = () => void 0, children = "Button" }: ButtonProps,
+    {
+      extraClassName,
+      onClick = () => void 0,
+      children = "Button",
+    }: ButtonProps,
     ref: ForwardedRef<ButtonImperativeHandle>,
   ) => {
     const buttonRef = useRef<HTMLButtonElement>(null);
@@ -40,8 +37,8 @@ export const Button = forwardRef(
     return (
       <button
         ref={buttonRef}
-        className={className.button}
-        onClick={() => onClick()}
+        className={`${className.button} ${extraClassName}`}
+        onClick={onClick}
       >
         {children}
       </button>

@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
 import { Nixie_One } from "next/font/google";
 import { Nunito_Sans } from "next/font/google";
-import "./globals.scss";
+import "../globals.scss";
 
 import Header from "@/src/app/components/header/header";
+import StoreProvider from "@/src/app/storeProvider";
+import { ErrorsBlock } from "@/src/app/components/errors/errors";
 
 const nixie = Nixie_One({
   weight: "400",
@@ -18,21 +19,20 @@ const nunito = Nunito_Sans({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "DayBreak",
-  description: "Something for something, not sure!",
-};
-
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${nixie.variable} ${nunito.className}`}>
-        {children}
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="en">
+        <body className={`${nixie.variable} ${nunito.className}`}>
+          <Header />
+          {children}
+          <ErrorsBlock />
+        </body>
+      </html>
+    </StoreProvider>
   );
 }

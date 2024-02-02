@@ -2,13 +2,12 @@
 import className from "./tasks.module.scss";
 import { useAppDispatch, useAppSelector } from "@/src/redux/hooks";
 import { Task } from "@/src/redux/slices/tasks/tasksActions";
-import { loadTasks, selectTask } from "@/src/redux/slices/tasks/tasksSlice";
+import { selectTask } from "@/src/redux/slices/tasks/tasksSlice";
 import { Button } from "@/src/app/components/utils/button";
-import { memo, useState } from "react";
+import { useState } from "react";
 import { TaskModal } from "@/src/app/components/taskModal/taskModal";
-import { loadTasksFromLocalStorage } from "@/src/redux/slices/tasks/tasksThunks";
-import { isBrowser } from "react-device-detect";
 import { addError } from "@/src/redux/reducers/errorsReducer";
+import { isEmpty } from "lodash";
 
 type TaskProps = Task & { onClick?: () => void };
 
@@ -50,6 +49,7 @@ export const Tasks = () => {
           {initialFetch ? (
             <TasksLoading />
           ) : (
+            !isEmpty(tasks) &&
             tasks.map((task: Task, index) => (
               <Task
                 onClick={() => {

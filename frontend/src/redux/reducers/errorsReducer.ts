@@ -19,7 +19,7 @@ export const errorsReducer = createReducer(
         state.errors.push({ message: "Error fetching tasks by user_id" });
       })
       .addCase(addError, (state, action) => {
-        state.errors.push({ message: "Error fetching tasks by user_id" });
+        state.errors.push({ message: action.payload?.message });
       })
       .addCase(deleteError, (state, action) => {
         state.errors.pop();

@@ -1,15 +1,14 @@
 "use client";
 import className from "./errors.module.scss";
 import { useAppSelector } from "@/src/redux/hooks";
-import { Dispatch, useEffect, useReducer, useRef } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import anime from "animejs/lib/anime.es.js";
-import { Action } from "redux";
 
 type ErrorProps = {
   index: number;
   message: string;
-  setError: Action<number>;
-  clearError: Action<number>;
+  setError: any;
+  clearError: any;
 };
 
 const Error = ({ index, message, setError }: ErrorProps) => {

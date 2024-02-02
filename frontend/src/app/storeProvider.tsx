@@ -28,14 +28,10 @@ export default function StoreProvider({
       ) {
         const storedTasks = loadTasksFromLocalStorage();
         if (storedTasks) {
-          console.log("Read from store");
           dispatch(loadTasks(storedTasks));
         }
       } else {
-        console.log("Read from fetch");
-        storeRef.current.dispatch(
-          fetchAllTasksByUserId("871c9c78-6c97-4d61-9459-6a14e1cffe05"),
-        );
+        storeRef.current.dispatch(fetchAllTasksByUserId());
       }
     }
   }, [storeRef?.current?.getState().tasks.allTasks]);
