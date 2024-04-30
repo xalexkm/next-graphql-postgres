@@ -24,6 +24,18 @@ const GET_USER_BY_EMAIL = gql`
   }
 `;
 
+const SEARCH_TASK_BY_NAME = gql`
+  query SearchTasksByName($userId: String, $searchString: String) {
+    searchTasksByName(userId: $userId, searchString: $searchString) {
+      estimated_difficulty
+      estimated_time
+      name
+      task_id
+      user_id
+    }
+  }
+`;
+
 const GET_USER = gql`
   query GetAllTasks {
     tasks {
@@ -86,4 +98,5 @@ export {
   ADD_TASK,
   UPDATE_TASK,
   GET_USER_BY_EMAIL,
+  SEARCH_TASK_BY_NAME,
 };
